@@ -1,0 +1,23 @@
+#!/bin/bash
+#Koosta skript,mis lubab kasutajale sisestada kellaaeg (tundide arv)
+#ja tervitab kasutajat vastavalt sisestatud väärtusele: 6-st 12-ni “Tere hommikust”,
+#12-st 18-ni “Tere päevast”, 18-st 22-ni “Tere õhtust” ning 22-st 6-ni “Head ööd!”.
+#Muude väärtuste korral väljastatakse seletav veateade.
+
+#aja järgi tervitamine
+
+echo -e "Sisesta aja väärtus: \c"
+read aeg
+#kontrollimine
+	if [ $aeg -ge 6 -a $aeg -lt 12 ]; then
+		echo "Tere hommikust!"
+	elif [ $aeg -ge 12 -a $aeg -lt 18 ]; then
+		echo "Tere päevast!"
+	elif [ $aeg -ge 18 -a $aeg -lt 22 ]; then
+		echo "Tere õhtust!"
+	elif [ $aeg -ge 22 -a $aeg -lt 24 ] || [ $aeg -ge 0 -a $aeg -lt 6 ]; then
+		echo "Head ööd"
+	else
+		echo "Vale sisend"
+fi
+#skripti lõpp
